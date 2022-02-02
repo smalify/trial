@@ -12,6 +12,7 @@ if (isset($_GET['vcpcid'])) {
 	);
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	$response = curl_exec($ch);
+	echo $response;
 	curl_close($ch);
 	$decoded_json = json_decode($response, false);
 	$encdata = $decoded_json->response;
