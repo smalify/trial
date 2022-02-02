@@ -26,6 +26,7 @@ if (isset($_GET['vcpcid'])) {
 	curl_setopt($ch, CURLOPT_HTTPHEADER, $headers);
 	$page = curl_exec($ch);
 	$str_output = rtrim($page); 
+	echo $str_output;
 	if(!empty($str_output)){
 		$result = (explode('"videos": ',$str_output))[1];
 		$result = (explode(', "content": ',$result))[0];
